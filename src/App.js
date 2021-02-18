@@ -1,25 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+// import { useState } from "react";
+//import { Button, Alert } from "react-bootstrap";
+ 
+// export default function App() {
+//   const [user, setUser] = useState(null);
+  
+//   return <div>{user ?<h1>Estas logueado</h1> : <h1>No estás logueado</h1>}</div>
+ 
+// }
 
-function App() {
+import { useState } from "react";
+import SignInSignUp from "./page/SignInSignUp"
+ 
+export default function App() {
+  const [user, setUser] = useState({ name: "Luciana"});
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      {user ? (
+        <div>
+          <SignInSignUp />
+        </div>
+      ) : (
+        <h1>No estás logueado</h1>
+      )}
     </div>
   );
 }
 
-export default App;
